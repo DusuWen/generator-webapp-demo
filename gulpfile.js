@@ -52,11 +52,11 @@ const lintBase = files => {
     .pipe($.if(!server.active, $.eslint.failAfterError()));
 }
 function lint() {
-  return lintBase('app/scripts/**/*.js')
+  return lintBase('app/scripts/**/*.scripts')
     .pipe(dest('app/scripts'));
 };
 function lintTest() {
-  return lintBase('test/spec/**/*.js')
+  return lintBase('test/spec/**/*.scripts')
     .pipe(dest('test/spec'));
 };
 
@@ -138,7 +138,7 @@ function startAppServer() {
   ]).on('change', server.reload);
 
   watch('app/styles/**/*.scss', styles);
-  watch('app/scripts/**/*.js', scripts);
+  watch('app/scripts/**/*.scripts', scripts);
   watch('app/fonts/**/*', fonts);
 }
 
@@ -156,9 +156,9 @@ function startTestServer() {
     }
   });
 
-  watch('app/scripts/**/*.js', scripts);
-  watch(['test/spec/**/*.js', 'test/index.html']).on('change', server.reload);
-  watch('test/spec/**/*.js', lintTest);
+  watch('app/scripts/**/*.scripts', scripts);
+  watch(['test/spec/**/*.scripts', 'test/index.html']).on('change', server.reload);
+  watch('test/spec/**/*.scripts', lintTest);
 }
 
 function startDistServer() {
