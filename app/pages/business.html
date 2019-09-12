@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>generator webapp demo</title>
+    <!-- Place favicon.ico in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../fonts/all.css" type="text/css" />
+    <!-- endbuild -->
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="../styles/grayscale.css">
+    <link rel="stylesheet" href="../styles/pages/business.css">
+    <!-- endbuild -->
+</head>
+<body id="page-top">
+    @@include('../components/nav.html', {
+        index: 'active'
+    })
+
+    <!-- Header -->
+    <header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+            </div>
+        </div>
+    </header>
+    <!-- build:scripts scripts/vendor.scripts -->
+    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/main.scripts -->
+    <script src="./scripts/grayscale.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

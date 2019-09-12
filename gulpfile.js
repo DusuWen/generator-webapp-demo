@@ -6,6 +6,7 @@ const del = require('del');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const { argv } = require('yargs');
+const fileInclude = require('gulp-file-include')
 
 const $ = gulpLoadPlugins();
 const server = browserSync.create();
@@ -75,6 +76,11 @@ function html() {
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true
     })))
+      .pipe(fileInclude({
+        prefix: '@@',
+        basepath: '@file',
+        indent: true
+      }))
     .pipe(dest('dist'));
 }
 

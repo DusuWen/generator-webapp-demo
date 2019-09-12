@@ -28,6 +28,11 @@
         background-color: transparent;
       }
     }
+    .active{
+      .nav-link {
+        color: $black
+      }
+    }
   }
   @media (min-width: 992px) {
     padding-top: 0;
